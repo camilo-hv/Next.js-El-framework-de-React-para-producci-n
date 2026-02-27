@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { CartCounter } from '../../shopping-cart/components/CartCounter';
+import { CartCounter } from '../../../shopping-cart/components/CartCounter';
 
 export const metadata: Metadata = {
  title: 'Shopping Cart',

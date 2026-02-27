@@ -16,10 +16,10 @@
 
 
 
-import pokemonsData from "@/app/data/pokemons.json";
-import { PokemonsResponse } from "@/app/pokemons/interface/pokemons-response";
-import { SimplePokemon } from "@/app/pokemons/interface/SimplePokemon";
-import { PokemonGrid } from '../../pokemons/components/PokemonGrid';
+import pokemonsData from "@/data/pokemons.json";
+import { PokemonsResponse } from "@/pokemons/interface/pokemons-response";
+import { SimplePokemon } from "@/pokemons/interface/SimplePokemon";
+import { PokemonGrid } from '../../../pokemons/components/PokemonGrid';
 
 const getPokemons = async (): Promise<SimplePokemon[]> => {
   const data: PokemonsResponse = pokemonsData
