@@ -1,15 +1,47 @@
-const getPokemons = async(limit = 20, offset = 0) => {
-  const data = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(res => res.json());
+// const getPokemons = async(limit = 20, offset = 0) => {
+//   const data = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(res => res.json());
 
-  return data;
-}
+//   return data;
+// }
+// export default async function PokemonsPage() {
+
+//   const pokemons = await getPokemons();
+
+//   return (
+//     <div>
+//       {JSON.stringify(pokemons)}
+//     </div>
+//   );
+// }
+
+
+
+import pokemonsData from "@/app/data/pokemons.json";
+import { PokemonsResponse } from "@/app/pokemons/interface/pokemons-response";
+import { SimplePokemon } from "@/app/pokemons/interface/SimplePokemon";
+import { PokemonGrid } from '../../pokemons/components/PokemonGrid';
+
+const getPokemons = async (): Promise<SimplePokemon[]> => {
+  const data: PokemonsResponse = pokemonsData
+
+  const pokemons = data.results.map(pokemon => ({
+    id: pokemon.url.split('/').at(-2)! ,
+    name: pokemon.name,
+  }))
+
+  // throw new Error('Esto es un error');
+
+  return pokemons;
+};
+
 export default async function PokemonsPage() {
 
   const pokemons = await getPokemons();
 
   return (
-    <div>
-      {JSON.stringify(pokemons)}
+    <div className="flex flex-col">
+      <span className="text-5xl my-2">Listado de Pokémons <small>estático</small></span>
+      <PokemonGrid pokemons={pokemons}/>
     </div>
   );
 }
