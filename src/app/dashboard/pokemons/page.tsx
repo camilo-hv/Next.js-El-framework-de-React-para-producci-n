@@ -1,43 +1,22 @@
-// const getPokemons = async(limit = 20, offset = 0) => {
-//   const data = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(res => res.json());
+import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
 
-//   return data;
-// }
-// export default async function PokemonsPage() {
-
-//   const pokemons = await getPokemons();
-
-//   return (
-//     <div>
-//       {JSON.stringify(pokemons)}
-//     </div>
-//   );
-// }
-
-
-
-import pokemonsData from "@/data/pokemons.json";
-import { PokemonsResponse } from "@/pokemons/interface/pokemons-response";
-import { SimplePokemon } from "@/pokemons/interface/simpl-pokemon";
-import { PokemonGrid } from '../../../pokemons/components/PokemonGrid';
-
-const getPokemons = async (): Promise<SimplePokemon[]> => {
-  const data: PokemonsResponse = pokemonsData
+const getPokemons = async(limit = 20, offset = 0):Promise<SimplePokemon[]> => {
+  const data:PokemonsResponse = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(res => res.json());
 
   const pokemons = data.results.map(pokemon => ({
     id: pokemon.url.split('/').at(-2)! ,
     name: pokemon.name,
-  }))
+  }));
 
   // throw new Error('Esto es un error');
+  // throw notFound();
+
 
   return pokemons;
-};
-
-
+}
 export default async function PokemonsPage() {
 
-  const pokemons = await getPokemons();
+  const pokemons = await getPokemons(151);
 
   return (
     <div className="flex flex-col">
@@ -46,3 +25,36 @@ export default async function PokemonsPage() {
     </div>
   );
 }
+
+
+
+// import pokemonsData from "@/data/pokemons.json";
+// import { PokemonsResponse } from "@/pokemons/interface/pokemons-response";
+// import { SimplePokemon } from "@/pokemons/interface/simpl-pokemon";
+// import { PokemonGrid } from '../../../pokemons/components/PokemonGrid';
+
+// const getPokemons = async (): Promise<SimplePokemon[]> => {
+//   const data: PokemonsResponse = pokemonsData
+
+//   const pokemons = data.results.map(pokemon => ({
+//     id: pokemon.url.split('/').at(-2)! ,
+//     name: pokemon.name,
+//   }))
+
+  // throw new Error('Esto es un error');
+
+//   return pokemons;
+// };
+
+
+// export default async function PokemonsPage() {
+
+//   const pokemons = await getPokemons();
+
+//   return (
+//     <div className="flex flex-col">
+//       <span className="text-5xl my-2">Listado de Pokémons <small>estático</small></span>
+//       <PokemonGrid pokemons={pokemons}/>
+//     </div>
+//   );
+// }

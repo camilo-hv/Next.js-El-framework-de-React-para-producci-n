@@ -7,7 +7,8 @@ interface Props {
 }
 
 const getPokemon = async(id:string): Promise<Pokemon> => {
-  const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`,{cache:'force-cache'}).then(res => res.json());
+  const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`,{cache:'force-cache'})
+  .then(res => res.json());
   return pokemon;
 }
 
@@ -16,9 +17,14 @@ const getPokemon = async(id:string): Promise<Pokemon> => {
 export default async function PokemonPage(props: Props) {
 
   const { id } = await props.params;
-  const pokemon = getPokemon(id);
+  const pokemon = await getPokemon(id);
 
   return(
-     <div>{JSON.stringify(pokemon)}</div>
+    <div>
+      <h1>Pokémon {id}</h1>
+      <div>
+        {pokemon.name}
+      </div>
+    </div>
   )
 }
