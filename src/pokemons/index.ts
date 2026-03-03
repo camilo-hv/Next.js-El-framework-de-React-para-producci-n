@@ -1,3 +1,4 @@
 export { PokemonGrid } from './components/PokemonGrid';
 export type { PokemonsResponse } from './interface/pokemons-response';
-export type { SimplePokemon } from './interface/SimplePokemon';
+export type { SimplePokemon } from './interface/simpl-pokemon';
+export type { Pokemon } from './interface/pokemon';

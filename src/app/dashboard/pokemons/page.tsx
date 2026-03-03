@@ -18,7 +18,7 @@
 
 import pokemonsData from "@/data/pokemons.json";
 import { PokemonsResponse } from "@/pokemons/interface/pokemons-response";
-import { SimplePokemon } from "@/pokemons/interface/SimplePokemon";
+import { SimplePokemon } from "@/pokemons/interface/simpl-pokemon";
 import { PokemonGrid } from '../../../pokemons/components/PokemonGrid';
 
 const getPokemons = async (): Promise<SimplePokemon[]> => {
@@ -33,6 +33,7 @@ const getPokemons = async (): Promise<SimplePokemon[]> => {
 
   return pokemons;
 };
+
 
 export default async function PokemonsPage() {
 
