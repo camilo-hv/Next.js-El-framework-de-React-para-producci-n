@@ -1,0 +1,29 @@
+[
+  {
+    "name": "React-TypeScript",
+    "url": "https://github.com/camilo-hv/React-TypeScript",
+    "curso": "https://www.youtube.com/watch?v=dNxaP_BTtwQ&list=PLCKuOXG0bPi26-eawizqyLOgM7j66H_4M",
+    "plataforma": "youtube",
+    "lenguaje":"React + TypeScript",
+    "tiempo": "3",
+    "aprendizaje": "Aprender React a profundidad,Realizar pruebas unitarias y de integración en todo tu código,MERN - Mongo Express React Node,Autenticación con Google y JWTs (JsonWebTokens),Hooks a profundidad,Crear aplicaciones reales,Redux, Context y otros manejadores de estado"
+  },
+  {
+    "name": "next-first-steps",
+    "url": "https://github.com/camilo-hv/next-first-steps",
+    "curso": "https://cursos.devtalles.com/courses/take/nextjs/lessons/45856512-introduccion-a-la-seccion",
+    "plataforma": "dev/talles",
+    "lenguaje":"Next.js",
+    "tiempo": "37",
+    "aprendizaje": "Aprenderas Next-js desde cero,Comprender cómo trabajar con Next + TypeScript,Diferentes técnicas de renderizado: SSR SSG CSR ISR,Next Middlewares para APIs y Páginas,Rutas dinámicas y estáticas,Next Auth,Material UI,Introducción a Next UI, Cookies, Pagos con PayPal y Tarjetas de crédito, Despliegues en varias plataformas"
+  },
+  {
+    "name": "Next.js-Framework-React",
+    "url": "https://github.com/camilo-hv/Next.js-Framework-React",
+    "curso": "https://cursos.devtalles.com/courses/take/nextjs/lessons/45856412-introduccion",
+    "plataforma": "dev/talles",
+    "lenguaje":"Next.js",
+    "tiempo": "37",
+    "aprendizaje": "Aprenderas Next-js desde cero,Comprender cómo trabajar con Next + TypeScript,Diferentes técnicas de renderizado: SSR SSG CSR ISR,Next Middlewares para APIs y Páginas,Rutas dinámicas y estáticas,Next Auth,Material UI,Introducción a Next UI, Cookies, Pagos con PayPal y Tarjetas de crédito, Despliegues en varias plataformas"
+  }
+]
