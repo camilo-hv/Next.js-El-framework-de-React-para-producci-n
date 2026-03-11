@@ -10,6 +10,8 @@ const getPokemons = async(limit = 20, offset = 0):Promise<SimplePokemon[]> => {
 
   // throw new Error('Esto es un error');
   // throw notFound();
+
+
   return pokemons;
 }
 export default async function PokemonsPage() {

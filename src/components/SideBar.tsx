@@ -22,12 +22,6 @@ const menuItems = [
         title: 'Pokemons',
         subTitle: 'Generación estática'
     },
-    {
-        path: '/dashboard/Repos',
-        icon: <IoFootball size={40}/>,
-        title: 'Repos',
-        subTitle: 'Repositorios Next.js'
-    },
 ]
 
 export const SideBar = () => {
